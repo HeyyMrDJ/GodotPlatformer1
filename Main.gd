@@ -20,3 +20,4 @@ func level_won():
 	$you_won_music.play()
 	$HUD/GameOver.text = "LEVEL COMPLETED!!!"
 	$HUD/GameOver.show()
+	$HUD/Button.show()
