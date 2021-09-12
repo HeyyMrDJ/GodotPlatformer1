@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="godottest"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://level1.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://game.gd"
 
 [input]
 

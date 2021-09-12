@@ -13,16 +13,16 @@ func get_input():
 	velocity.x += speed
 	if velocity.x == 0:
 		speed = speed * -1
-	print(speed)
+	#DEBUG print(speed)
 	#if Input.is_action_pressed("move_left"):
 		#velocity.x -= speed
 	if $raycast_left.is_colliding():
 		#$CollisionShape2D.position.x *= -1
-		print("Left")
+		#DEBUG print("Left")
 		speed = 200
 	if $raycast_right.is_colliding():
-		print("Right")
-		print($raycast_left.get_collider())
+		#DEBUG print("Right")
+		#DEBUG print($raycast_left.get_collider())
 		speed = -200
 	#if is_on_wall():
 		#speed = speed * -1

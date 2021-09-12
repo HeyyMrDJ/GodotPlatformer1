@@ -20,3 +20,4 @@ func open_menu():
 		$Button.hide()
 	else:
 		$Button.show()
+		
