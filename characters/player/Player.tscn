@@ -191,6 +191,7 @@ position = Vector2( 0.0640768, 0.134628 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 16
+frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

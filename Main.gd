@@ -22,8 +22,14 @@ func level_won():
 	$HUD/GameOver.text = "LEVEL COMPLETED!!!"
 	$HUD/GameOver.show()
 	print(get_tree().current_scene.name)
+	print($"/root/Global".level)
 	yield(get_tree().create_timer(6.0), "timeout")
 	$HUD/Button.show()
-	get_node("/root/Game").level += 1
-	get_tree().change_scene("res://level"+str(get_node("/root/Game").level)+".tscn")
+	if $"/root/Global".level == 4:
+		$HUD/GameOver.text = "YOU HAVE SAVED THE WORLD AND BEATEN THE GAME!!"
+		yield(get_tree().create_timer(3.0), "timeout")
+		$HUD/GameOver.show()
+		get_tree().change_scene("res://level1.tscn")
+	get_node("/root/Global").level += 1
+	get_tree().change_scene("res://level"+str(get_node("/root/Global").level)+".tscn")
 	#get_tree().change_scene("res://level2.tscn")

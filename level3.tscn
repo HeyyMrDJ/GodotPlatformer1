@@ -26,6 +26,7 @@ stream = ExtResource( 9 )
 stream = ExtResource( 7 )
 
 [node name="End_level" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.027451, 0, 0, 1 )
 position = Vector2( 4087.58, 53.9264 )
 
 [node name="you_won_music" type="AudioStreamPlayer" parent="."]

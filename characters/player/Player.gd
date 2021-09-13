@@ -15,8 +15,14 @@ signal level_won
 
 onready var _animation_player = $AnimationPlayer
 
+var control
+
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+	$"/root/Global".Player = self
+	control = true
+	#var enemy_node = get_tree().get_root().find_node("boss1", true, false)
+	#enemy_node.connect("_on_enemy_top_area_entered", self, "player_jump")
 
 func get_input():
 	velocity.x = 0
@@ -39,7 +45,8 @@ func get_input():
 		emit_signal("open_menu")
 
 func _physics_process(delta):
-	get_input()
+	if control == true:
+		get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if Input.is_action_just_pressed("jump"):
@@ -68,3 +75,13 @@ func level_won():
 
 func _on_End_level_level_won():
 	pass # Replace with function body.
+	
+func player_bounce():
+	control = false
+	if velocity.x < 0:
+		velocity.x = -400
+	else:
+		velocity.x = 400
+	velocity.y = jump_speed
+	yield(get_tree().create_timer(0.25), "timeout")
+	control = true

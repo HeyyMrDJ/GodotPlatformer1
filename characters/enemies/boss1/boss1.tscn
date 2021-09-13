@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://characters/enemies/enemy1/mob.png" type="Texture" id=1]
+[ext_resource path="res://characters/enemies/boss1/boss1.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.8809, 32.0421 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 53.673, 26.3893 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 33.0922, 6.33317 )
+
+[node name="boss1" type="KinematicBody2D" groups=[
+"enemy",
+"map",
+]]
+scale = Vector2( 3, 3 )
+script = ExtResource( 2 )
+
+[node name="raycast_left" type="RayCast2D" parent="."]
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+
+[node name="raycast_right" type="RayCast2D" parent="."]
+rotation = -1.5708
+scale = Vector2( 2, 2 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.384314, 0.0431373, 0.0431373, 1 )
+z_index = 10
+texture = ExtResource( 1 )
+
+[node name="enemy_side" type="Area2D" parent="."]
+monitoring = false
+
+[node name="enemy_side_box" type="CollisionShape2D" parent="enemy_side"]
+position = Vector2( -0.129059, 6.9693 )
+shape = SubResource( 2 )
+
+[node name="enemy_top" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="enemy_top_box" type="CollisionShape2D" parent="enemy_top"]
+position = Vector2( -0.387184, -40.009 )
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="enemy_side" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="enemy_top" to="." method="_on_enemy_top_area_entered"]

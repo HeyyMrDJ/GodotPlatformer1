@@ -9,7 +9,7 @@
 [ext_resource path="res://sounds/Intro Theme.mp3" type="AudioStream" id=9]
 [ext_resource path="res://sounds/level_won.wav" type="AudioStream" id=10]
 
-[node name="Level2" type="Node"]
+[node name="Level3" type="Node"]
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
@@ -26,7 +26,7 @@ stream = ExtResource( 9 )
 stream = ExtResource( 7 )
 
 [node name="End_level" parent="." instance=ExtResource( 8 )]
-position = Vector2( 4087.58, 53.9264 )
+position = Vector2( 1004.85, 1076.21 )
 
 [node name="you_won_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )

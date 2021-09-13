@@ -12,7 +12,7 @@ extents = Vector2( 53.673, 26.3893 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32.7651, 6.33317 )
 
-[node name="basemob" type="KinematicBody2D" groups=[
+[node name="boss1" type="KinematicBody2D" groups=[
 "enemy",
 "map",
 ]]
