@@ -3,6 +3,7 @@ extends Node
 func _ready():
 	$music.play()
 	$HUD/Button.hide()
+	$HUD/Button.text = "Continue"
 	$HUD/GameOver.hide()
 
 func new_game():
@@ -16,6 +17,7 @@ func game_over():
 	$music.stop()
 	$gameover_music.play()
 
+
 func level_won():
 	$music.stop()
 	$you_won_music.play()
@@ -26,10 +28,13 @@ func level_won():
 	yield(get_tree().create_timer(6.0), "timeout")
 	$HUD/Button.show()
 	if $"/root/Global".level == 4:
-		$HUD/GameOver.text = "YOU HAVE SAVED THE WORLD AND BEATEN THE GAME!!"
-		yield(get_tree().create_timer(3.0), "timeout")
+		get_node("/root/Global").level = 0
+		print("Current level is: ", get_node("/root/Global").level)
+		$you_won_music.stop()
+		$you_won_game_music.play()
+		$HUD/Button.text = "New Game"
+		$HUD/GameOver.text = "YOU HAVE SAVED THE CONQUERED THE BOSS AND IT'S MINIONS. THE WORLD IS NOW SAFE AGAIN!!!"
+		yield(get_tree().create_timer(26.0), "timeout")
 		$HUD/GameOver.show()
-		get_tree().change_scene("res://level1.tscn")
 	get_node("/root/Global").level += 1
 	get_tree().change_scene("res://level"+str(get_node("/root/Global").level)+".tscn")
-	#get_tree().change_scene("res://level2.tscn")

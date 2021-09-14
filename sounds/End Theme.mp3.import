@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/End Theme.mp3-85d274f38500e361c8e8991793e37fe9.mp3str"
+
+[deps]
+
+source_file="res://sounds/End Theme.mp3"
+dest_files=[ "res://.import/End Theme.mp3-85d274f38500e361c8e8991793e37fe9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

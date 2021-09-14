@@ -8,7 +8,7 @@
 [ext_resource path="res://Main.gd" type="Script" id=6]
 [ext_resource path="res://sounds/gameover.wav" type="AudioStream" id=7]
 [ext_resource path="res://levels/endlevel/end_level.tscn" type="PackedScene" id=8]
-[ext_resource path="res://sounds/Intro Theme.mp3" type="AudioStream" id=9]
+[ext_resource path="res://sounds/Intro_Level1.mp3" type="AudioStream" id=9]
 [ext_resource path="res://sounds/level_won.wav" type="AudioStream" id=10]
 [ext_resource path="res://models/bushes/bushes_tilemap.tscn" type="PackedScene" id=11]
 

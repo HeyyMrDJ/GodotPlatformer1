@@ -38,6 +38,9 @@ func _on_Area2D_area_entered(_area):
 
 
 func _on_enemy_top_area_entered(_area):
+	print("enemy hit")
+	print(self.name)
+	$"/root/Global".Player.player_bounce()
 	queue_free()
 
 

@@ -16,6 +16,7 @@ signal level_won
 onready var _animation_player = $AnimationPlayer
 
 var control
+export (bool) var alive = true
 
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
@@ -37,7 +38,6 @@ func get_input():
 		$Sprite.flip_h = velocity.x < 0
 	if Input.is_action_just_pressed("jump"):
 		state_machine.travel("standing_jump")
-		$jump_sound.play()
 	if Input.is_action_just_pressed("attack1"):
 		state_machine.travel("attack1")
 		$attack.play()
@@ -52,16 +52,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed
+			$jump_sound.play()
 
 # _animation_player.play("New Anim")
 
 
 func _on_player_side_area_entered(_area):
+	$"/root/Global".Player_Alive = false
 	game_over()
 	
 
 func game_over():
 	emit_signal("player_died")
+	alive = false
 	queue_free()
 
 
@@ -77,11 +80,13 @@ func _on_End_level_level_won():
 	pass # Replace with function body.
 	
 func player_bounce():
+	var bounce_y = -1200
 	control = false
 	if velocity.x < 0:
 		velocity.x = -400
 	else:
 		velocity.x = 400
-	velocity.y = jump_speed
+	velocity.y = bounce_y
+	$bounce_sound.play()
 	yield(get_tree().create_timer(0.25), "timeout")
 	control = true

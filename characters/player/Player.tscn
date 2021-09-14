@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://characters/player/adventurer-v1.5-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://sounds/jump.wav" type="AudioStream" id=3]
 [ext_resource path="res://sounds/swing.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/bouce_sound.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.82175, 14.0133 )
@@ -198,6 +199,9 @@ current = true
 
 [node name="jump_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="bounce_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [node name="attack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

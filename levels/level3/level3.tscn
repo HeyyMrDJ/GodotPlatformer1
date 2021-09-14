@@ -3,7 +3,7 @@
 [ext_resource path="res://characters/enemies/enemy1/basemob.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/bricks/MoreBricks_Tilemap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/endlevel/end_level.tscn" type="PackedScene" id=9]
-[ext_resource path="res://sounds/Intro Theme.mp3" type="AudioStream" id=10]
+[ext_resource path="res://sounds/Intro_Level1.mp3" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15959.9, 50.4028 )

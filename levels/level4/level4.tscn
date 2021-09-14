@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://models/bricks/MoreBricks_Tilemap.tscn" type="PackedScene" id=7]
-[ext_resource path="res://sounds/Intro Theme.mp3" type="AudioStream" id=10]
+[ext_resource path="res://sounds/Intro_Level1.mp3" type="AudioStream" id=10]
 
 [node name="Level4" type="Node"]
 
