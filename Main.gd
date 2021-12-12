@@ -9,7 +9,7 @@ func _ready():
 func new_game():
 	$HUD/Score.text = str(0)
 	get_tree().reload_current_scene()
-	#get_tree().change_scene("res://Main.tscn")
+
 
 func game_over():
 	$HUD/Button.show()
@@ -26,14 +26,13 @@ func level_won():
 	print(get_tree().current_scene.name)
 	print($"/root/Global".level)
 	yield(get_tree().create_timer(6.0), "timeout")
-	$HUD/Button.show()
 	if $"/root/Global".level == 4:
 		get_node("/root/Global").level = 0
 		print("Current level is: ", get_node("/root/Global").level)
 		$you_won_music.stop()
 		$you_won_game_music.play()
 		$HUD/Button.text = "New Game"
-		$HUD/GameOver.text = "YOU HAVE SAVED THE CONQUERED THE BOSS AND IT'S MINIONS. THE WORLD IS NOW SAFE AGAIN!!!"
+		$HUD/GameOver.text = "YOU HAVE CONQUERED THE BOSS AND IT'S MINIONS. THE WORLD IS NOW SAFE AGAIN!!!"
 		yield(get_tree().create_timer(26.0), "timeout")
 		$HUD/GameOver.show()
 	get_node("/root/Global").level += 1

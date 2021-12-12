@@ -16,6 +16,7 @@ func update_score(score):
 	$Score.text = str(score)
 
 func open_menu():
+	$Button.text = "Reset"
 	if $Button.visible == true:
 		$Button.hide()
 	else:
